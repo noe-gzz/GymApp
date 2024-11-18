@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <a href="/logout">Logout</a>
+    <a href="/add-exercise">Add Exercise</a>
+    <h2>Exercises</h2>
+    <canvas id="chart"></canvas>
+    <script>
+        const ctx = document.getElementById('chart').getContext('2d');
+        const data = {{ exercises|tojson }};
+        const labels = data.map(d => new Date(d.fecha).toLocaleDateString());
+        const pesos = data.map(d => d.peso_kg);
+        const repeticiones = data.map(d => d.repeticiones);
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Peso (kg)',
+                        data: pesos,
+                        borderColor: 'green',
+                        backgroundColor: 'rgba(0, 255, 0, 0.2)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Repeticiones',
+                        data: repeticiones,
+                        borderColor: 'blue',
+                        backgroundColor: 'rgba(0, 0, 255, 0.2)',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

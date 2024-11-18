@@ -1,0 +1,36 @@
+body {
+    background-color: #000; /* Fondo negro */
+    color: #00ff00; /* Letras verdes */
+    font-family: 'Courier New', Courier, monospace; /* Fuente estilo terminal */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #00ff00; /* Borde verde */
+    border-radius: 10px;
+    background-color: #111; /* Fondo ligeramente gris */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #00ff00;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #00ff00;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}

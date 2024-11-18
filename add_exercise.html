@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Add Exercise</title>
+</head>
+<body>
+    <h1>Add Exercise</h1>
+    <form method="post">
+        <label>Fecha (dd/mm/yyyy):</label>
+        <input type="text" name="fecha" required>
+        <br>
+        <label>Ejercicio:</label>
+        <input type="text" name="ejercicio" required>
+        <br>
+        <label>Peso (kg):</label>
+        <input type="number" name="peso_kg" step="0.1" required>
+        <br>
+        <label>Repeticiones:</label>
+        <input type="number" name="repeticiones" required>
+        <br>
+        <label>Series:</label>
+        <input type="number" name="series" required>
+        <br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
